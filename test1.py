@@ -25,12 +25,11 @@ for log in file:
                 logUser = result.group(3)
 
                 if logUser not in perUser.keys():
-                        perUser[logUser] = {}
-                        perUser[logUser]["INFO"] = 0
-                        perUser[logUser]["ERROR"] = 0
-                perUser[logUser][logType] += 1
-
-                if logType == "ERROR":
+                        perUser[logUser] = [0,0]
+                if logType == "INFO":
+                        perUser[logUser][0] += 1
+                elif logType == "ERROR":
+                        perUser[logUser][1] += 1
                         if logMsg not in errors.keys():
                                 errors[logMsg] = 0
                         errors[logMsg] += 1
