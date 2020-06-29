@@ -4,6 +4,8 @@ per_user = {"Amy": {"INFO": 3, "ERROR": 4}, "Joyce": {"INFO": 0, "ERROR":1}, "Gr
 #need to try
 per_user = {"Amy": [3, 4], "Joyce": [0, 1], "Grace": [1, 1]}
 
+"""completed"""
+
 #Task 2 currently it's
                 if logUser not in perUser.keys():
                         perUser[logUser] = {}
