@@ -60,3 +60,5 @@ result = re.search(r"ticky: ([A-Z]+) ([\w'#\[\]\s]*) \((.*)\)$", log)
 
 #need to try
 result = re.search(r"(ERROR|INFO) ([\w'#\[\]\s]*) \(([\w\.]*)\)", line) 
+
+"""completed"""
