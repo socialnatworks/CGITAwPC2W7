@@ -18,7 +18,7 @@ errorFile = "error_message.csv"
 userFile = "user_statistics.csv"
 
 for log in file:
-        result = re.search(r"ticky: ([A-Z]+) ([\w'#\[\]\s]*) \((.*)\)$", log)
+        result = re.search(r"(ERROR|INFO) ([\w'#\[\]\s]*) \((.*)\)$", log)
         if result:
                 logType = result.group(1)
                 logMsg = result.group(2)
