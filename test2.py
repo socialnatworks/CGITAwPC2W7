@@ -35,27 +35,18 @@ for log in file:
                 logMsg = result.group(2)
                 logUser = result.group(3)
 
-                if logType == "INFO":
-                        try:
-                                perUser[logUser]["INFO"] += 1
-                        except KeyError:
-                                if logUser not in perUser:
-                                        perUser[logUser] = {}
-                                perUser[logUser]["INFO"] = 1
-
+                try:
+                        perUser[logUser][logType] += 1
+                except KeyError:
+                        if logUser not in perUser:
+                                perUser[logUser] = {}
+                        perUser[logUser][logType] = 1
                 if logType == "ERROR":
-                        try:
-                                perUser[logUser]["ERROR"] += 1
-                        except KeyError:
-                                if logUser not in perUser:
-                                        perUser[logUser] = {}
-                                perUser[logUser]["ERROR"] = 1                        
                         try:
                                 errors[logMsg] += 1
                         except KeyError:
                                 errors[logMsg] = 1
-                        
-
+                
         sortedErrors = sorted(errors.items(), key = operator.itemgetter(1), reverse = True)
         sortedPerUser = sorted(perUser.items(), key = operator.itemgetter(0))
 
