@@ -26,6 +26,7 @@ per_user = {"Amy": [3, 4], "Joyce": [0, 1], "Grace": [1, 1]}
                         except KeyError:
                                 userCounts[username] = [type, 1]
 
+"""completed for dictionary; completed for list"""
 
 #Task 3 currently it's
 with open(errorFile, "w") as em:
